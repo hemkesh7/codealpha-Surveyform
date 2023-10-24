@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div class="container">
+        <center><h1 style="font-size:2.5vw">Dark Knight & Co.</h1></center>
+        <center><u><h4 style="color: crimson;">Join us to protect the one that needs protection</h4></u></center>
+        <form id="survey-form">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" required> Male
+                    <input type="radio" id="female" name="gender" required> Female
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Mobile Number:</label>
+                <input type="number" id="number" name="number" required>
+            </div>
+            <div class="form-group">
+                <label for="domain">Previous Expirence:</label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" name="domain" required> yes
+                    <input type="radio" id="no" name="domain" required> No<br>
+                </div>
+            <div class="form-group">
+                <label for="domain">Fighting Style:</label>
+                <div class="radio-group">
+                    <input type="radio" id="ai" name="domain" required> Karate<br>
+                    <input type="radio" id="ml" name="domain" required> Boxing<br>
+                    <input type="radio" id="web" name="domain" required> Taekwondo<br>
+                    <input type="radio" id="cloud" name="domain" required> Kung Fu<br>
+                    <input type="radio" id="android-dev" name="domain" required> Jiu jitsu<br>
+                    <input type="radio" id="ethical-hacking" name="domain" required> Muay Thai
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="feedback">How did you find us?</label>
+                <div class="radio-group">
+                    <input type="radio" id="one" name="where" required> Google Ads
+                    <input type="radio" id="two" name="where" required> Instagram
+                    <input type="radio" id="three" name="where" required> WhatsApp
+                    <input type="radio" id="four" name="where" required> LinkedIn
+                    <input type="radio" id="other" name="where" required> Other (Please specify)
+                </div>
+                <div class="form-group" id="other-response" style="display: none;">
+                    <label for="write">Mention it here:</label>
+                    <textarea id="write" name="write" rows="1"></textarea>
+                </div>
+            </div>
+            
+            <center><h4>Wait for our response Dark Knight; We know you are worthy...</h4></center>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.querySelectorAll('input[name="where"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (radio.id === 'other') {
+                    document.getElementById('other-response').style.display = 'block';
+                } else {
+                    document.getElementById('other-response').style.display = 'none';
+                }
+            });
+        });
+    </script>        
+</body>
+</html>
